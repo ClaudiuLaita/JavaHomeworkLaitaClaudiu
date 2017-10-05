@@ -5,15 +5,13 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
 
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Electronic Books Store Authentication and authorization</title>
-        <link rel="stylesheet" type="text/css" href="./css/eBooksStoreCSS.css">
+        <link rel="stylesheet" type="text/css" href=".\\css\\ebookstore.css">
     </head>
     <body>
         <c:set var="activePage" value="index" scope="session"></c:set>
