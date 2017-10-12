@@ -39,7 +39,7 @@ public class UserCnp {
         //Create a local integer and assign the first number of the CNP to it
         int x = Character.getNumericValue(cnp.charAt(0));
         if(x != 1 && x != 2){
-            throw new IllegalArgumentException("ERROR! Your cnp must start with 1 or 2");
+            System.out.println("ERROR! Your cnp must start with 1 or 2");
         }
     }
     
@@ -51,7 +51,7 @@ public class UserCnp {
         int x = Integer.parseInt(mm);
         //Checks for a valid month
         if(x < 1 || x > 12){
-            throw new IllegalArgumentException("ERROR! Your cnp must contain a valid month");
+            System.out.println("ERROR! Your cnp must contain a valid month");
         }
         //Create another local string(altough we could use the string above again) 
         //and assign the next two numbers to it
@@ -60,7 +60,7 @@ public class UserCnp {
         x = Integer.parseInt(dd);
         //Checks for a valid day of the month(THIS CODE SHOULD BE REVISED)
         if(x < 1 || x > 31){
-            throw new IllegalArgumentException("ERROR! Your cnp must contain a valid day");
+            System.out.println("ERROR! Your cnp must contain a valid day");
         }
         //Create a local string and assign the next four numbers to it
         String yyyy = cnp.substring(5, 9);
@@ -68,7 +68,7 @@ public class UserCnp {
         x = Integer.parseInt(yyyy);
         //Checks for a valid year
         if(x < 1900 || x > 2017){
-            throw new IllegalArgumentException("ERROR! Your cnp must contain a valid year");
+            System.out.println("ERROR! Your cnp must contain a valid year");
         }
     }
     
