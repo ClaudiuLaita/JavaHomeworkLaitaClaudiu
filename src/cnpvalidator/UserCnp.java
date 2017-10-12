@@ -18,12 +18,10 @@ public class UserCnp {
     private String cnp;
     //create a Scanner for user input
     Scanner input = new Scanner(System.in);
-    
     //Asks user for input
     public void enterCnp() {
         System.out.println("Please enter a valid format CNP(MMDDYYYY) here: ");
         cnp = input.next();
-        
     }
 
     //Checks the length of the CNP and verify if the user inserted only digits
@@ -31,7 +29,6 @@ public class UserCnp {
         //Create a pattern for digit check
         Pattern length = Pattern.compile("\\d{13}");
         Matcher matcher = length.matcher(cnp);
-        
         if(cnp == null || cnp.length() !=13 || !matcher.find()){
             throw new IllegalArgumentException("ERROR! Your cnp must be exactly 13 Digits long");
         }
@@ -41,7 +38,6 @@ public class UserCnp {
     public void checkGender(){
         //Create a local integer and assign the first number of the CNP to it
         int x = Character.getNumericValue(cnp.charAt(0));
-        
         if(x != 1 && x != 2){
             throw new IllegalArgumentException("ERROR! Your cnp must start with 1 or 2");
         }
@@ -57,7 +53,6 @@ public class UserCnp {
         if(x < 1 || x > 12){
             throw new IllegalArgumentException("ERROR! Your cnp must contain a valid month");
         }
-        
         //Create another local string(altough we could use the string above again) 
         //and assign the next two numbers to it
         String dd = "" + cnp.charAt(3) + cnp.charAt(4);
@@ -67,7 +62,6 @@ public class UserCnp {
         if(x < 1 || x > 31){
             throw new IllegalArgumentException("ERROR! Your cnp must contain a valid day");
         }
-        
         //Create a local string and assign the next four numbers to it
         String yyyy = cnp.substring(5, 9);
         //Parse the numbers to integer
@@ -77,6 +71,7 @@ public class UserCnp {
             throw new IllegalArgumentException("ERROR! Your cnp must contain a valid year");
         }
     }
+    
     //Display validation message
     public void showResult(){
         System.out.println("You have entered a valid CNP. Thank you!");
